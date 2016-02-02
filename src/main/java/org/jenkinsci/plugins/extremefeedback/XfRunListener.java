@@ -92,7 +92,7 @@ public class XfRunListener extends RunListener<AbstractBuild> {
     public void onStarted(AbstractBuild run, TaskListener listener) {
         Lamps plugin = Lamps.getInstance();
         Set<String> jobs = plugin.getJobs();
-        String jobName = run.getParent().getName();
+        String jobName = run.getParent().getFullName();
         XfEventMessage xfEventMessage = new XfEventMessage();
 
         if (jobs.contains(jobName)) {
